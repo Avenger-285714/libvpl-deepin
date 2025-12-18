@@ -1,15 +1,68 @@
-Source: template-repository
-Section: unknown
+Source: libvpl
+Section: libs
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Timo Aaltonen <tjaalton@debian.org>
+Build-Depends: debhelper-compat (= 13),
+ cmake,
+ libva-dev,
+ pkgconf,
+Standards-Version: 4.7.0
+Homepage: https://github.com/intel/libvpl
+Vcs-Browser: https://salsa.debian.org/debian/libvpl
+Vcs-Git: https://salsa.debian.org/debian/libvpl.git
+Rules-Requires-Root: no
 
-Package: template-repository
-Architecture: any
+Package: libvpl2
+Architecture: amd64 x32
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Description: Intel Video Processing Library -- shared library
+ Intel Video Processing Library (Intel VPL) provides access to hardware
+ accelerated video decode, encode, and processing capabilities on Intel
+ GPUs to support AI visual inference, media delivery, cloud gaming, and virtual
+ desktop infrastructure use cases.
+ .
+ This repository contains the following components:
+ .
+  - Copies of the Intel® VPL API header files
+  - Intel VPL Dispatcher
+  - Examples demonstrating API usage
+ .
+ This package includes the dispatcher library.
+
+Package: libvpl-dev
+Architecture: amd64 x32
+Depends:
+ libvpl2 (= ${binary:Version}),
+ ${misc:Depends},
+Description: Intel Video Processing Library -- development files
+ Intel Video Processing Library (Intel VPL) provides access to hardware
+ accelerated video decode, encode, and processing capabilities on Intel
+ GPUs to support AI visual inference, media delivery, cloud gaming, and virtual
+ desktop infrastructure use cases.
+ .
+ This repository contains the following components:
+ .
+  - Copies of the Intel® VPL API header files
+  - Intel VPL Dispatcher
+  - Examples demonstrating API usage
+ .
+ This package includes header files and examples for development.
+
+Package: libvpl-examples
+Architecture: amd64 x32
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Breaks: libvpl-dev (<< 1:2.14.0-1)
+Replaces: libvpl-dev (<< 1:2.14.0-1)
+Description: Intel Video Processing Library -- example binaries
+ Intel Video Processing Library (Intel VPL) provides access to hardware
+ accelerated video decode, encode, and processing capabilities on Intel
+ GPUs to support AI visual inference, media delivery, cloud gaming, and virtual
+ desktop infrastructure use cases.
+ .
+ This repository contains the following components:
+ .
+  - Copies of the Intel® VPL API header files
+  - Intel VPL Dispatcher
+  - Examples demonstrating API usage
+ .
+ This package includes example binaries.

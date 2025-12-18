@@ -2,3 +2,11 @@
 
 %:
 	dh $@
+
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		-DBUILD_EXAMPLES=ON \
+		-DVPL_INSTALL_ENVDIR=/usr/share/vpl/env \
+		-DVPL_INSTALL_MODFILEDIR=/usr/share/vpl/modulefiles
+

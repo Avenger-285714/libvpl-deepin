@@ -1,5 +1,83 @@
-template-repository (1.0-1) unstable; urgency=medium
+libvpl (1:2.15.0-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream release.
+  * patches: Revert a commit which broke examples install.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 12 Aug 2025 09:21:07 +0300
+
+libvpl (1:2.14.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control, rules: Build examples, add libvpl-examples.
+  * control, install: Move examples source to -examples, add B/R on old
+    libvpl-dev.
+  * Rename source/repo to libvpl to match upstream.
+  * rules: Drop useless override.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 29 Jan 2025 20:21:42 +0200
+
+onevpl (1:2.13.0-1) unstable; urgency=medium
+
+  * New upstream release.
+    - new versioning scheme, bump the epoch
+  * control: Update descriptions, drop onevpl-tools.
+  * control: Migrate to pkgconf.
+  * control: Bump standards to 4.7.0, no changes.
+  * Update upstream repo to intel/libvpl.
+  * install: Updated.
+  * control: Drop useless build-depends.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sat, 07 Sep 2024 11:22:27 +0300
+
+onevpl (2023.3.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * rules: Fix env/moduledir destinations.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 19 Jun 2023 16:23:29 +0300
+
+onevpl (2023.1.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 10 Jan 2023 16:55:32 +0200
+
+onevpl (2023.1.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: libvpl-dev should depend on libvpl2. (Closes: #1025500)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 08 Dec 2022 13:25:09 +0200
+
+onevpl (2022.2.4-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 18 Oct 2022 14:29:10 +0300
+
+onevpl (2022.2.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Add missing build-deps.
+  * rules, install: Fix install paths.
+  * install: Add examples to -dev.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 26 Aug 2022 13:20:13 +0300
+
+onevpl (2022.1.0-2) unstable; urgency=medium
+
+  * control: Limit architecture to amd64, x32. (Closes: #1008866)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sun, 03 Apr 2022 11:34:46 +0300
+
+onevpl (2022.1.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sat, 02 Apr 2022 06:44:42 +0300
+
+onevpl (2022.0.4-1) unstable; urgency=medium
+
+  * Initial release (Closes: #1003279)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 11 Feb 2022 10:36:44 +0200
